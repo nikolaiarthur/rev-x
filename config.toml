@@ -1,29 +1,39 @@
 enable-magisk-update = true # set this to false if you do not want to receive updates for the module in magisk app
-parallel-jobs = 1
+parallel-jobs = 1                    # amount of cores to use for parallel patching, if not set $(nproc) is used
+compression-level = 9                # module zip compression level
+remove-rv-integrations-checks = true # remove checks from the revanced integrations
+
+patches-source = "revanced/revanced-patches" # where to fetch patches bundle from. default: "revanced/revanced-patches"
+cli-source = "j-hc/revanced-cli"             # where to fetch cli from. default: "j-hc/revanced-cli"
+# options like cli-source can also set per app
+rv-brand = "ReVanced Extended" # rebrand from 'ReVanced' to something different. default: "ReVanced"
+
+patches-version = "v2.160.0" # 'latest', 'dev', or a version number. default: "latest"
+cli-version = "v5.0.0"       # 'latest', 'dev', or a version number. default: "latest"
 
 # add 'enabled = false' for not patching a specific app or remove it from the config
 # see https://github.com/j-hc/revanced-magisk-module/blob/main/CONFIG.md for more detailed explanations
 
 # you can use rvmm-config-gen to generate a config
 
-# [Music-Extended]
-# app-name = "Music"
-# patches-source = "inotia00/revanced-patches"
-# cli-source = "inotia00/revanced-cli"
-# rv-brand = "ReVanced Extended"
-# build-mode = "module"
-# arch = "arm64-v8a"
-# apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
+[Music-Extended]
+app-name = "Music"
+patches-source = "inotia00/revanced-patches"
+cli-source = "inotia00/revanced-cli"
+rv-brand = "ReVanced Extended"
+build-mode = "module"
+arch = "arm64-v8a"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
 # # archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.youtube.music"
 
-# [YouTube-Extended]
-# app-name = "YouTube"
-# patches-source = "inotia00/revanced-patches"
-# cli-source = "inotia00/revanced-cli"
-# rv-brand = "ReVanced Extended"
-# build-mode = "module"
-# arch = "arm64-v8a"
-# apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
+[YouTube-Extended]
+app-name = "YouTube"
+patches-source = "inotia00/revanced-patches"
+cli-source = "inotia00/revanced-cli"
+rv-brand = "ReVanced Extended"
+build-mode = "module"
+arch = "arm64-v8a"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 # # archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.youtube"
 
 [Reddit-Extended]
